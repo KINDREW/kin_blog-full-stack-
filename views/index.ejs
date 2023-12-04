@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('./partials/head.ejs') %>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+    <section>
+      <h2>All blogs</h2>
+      <div class="home content">
+        <% if (blogs.length > 0) { %> <% blogs.map(blog =>{ %>
+        <a class="bread" href="/blogs/<%= blog.id %>">
+          <h3><%=blog.title%></h3>
+          <p><%=blog.snippet%></p>
+        </a>
+        <% } ) %> <%} else {%>
+        <h3>No Blogs Available</h3>
+        <% } %>
+      </div>
+    </section>
+  </body>
+</html>
